@@ -7,5 +7,6 @@ export const colors = {
     regular: '#eaeaea',
     variant_one: '#fdfcfc',
     variant_two: '#e1e1e1',
+    variant_three: '#808080',
   },
 };

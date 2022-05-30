@@ -27,10 +27,11 @@ const WhiteBar = styled.div<WhiteBarProps>`
   justify-content: flex-start;
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
   border-radius: 10px;
-  border: 1px solid ${colors.primary_gray.regular};
-  padding: 0.8rem 2rem;
+  border: 1px solid ${colors.primary_gray.variant_two};
+  padding: 0.8rem 1rem;
   cursor: pointer;
-  background: ${(props) => (props.clicked ? colors.primary_orange : colors.white)};
+  background: ${colors.white}
+  border: ${(props) => (props.clicked ? `2px solid ${colors.primary_orange}` : `2px solid ${colors.white}`)};
   transition: all 0.2s ease-in-out;
 
   &:hover {

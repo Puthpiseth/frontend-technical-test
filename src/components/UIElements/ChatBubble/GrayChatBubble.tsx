@@ -17,7 +17,7 @@ const GrayBarDiv = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 2px rgba(48, 56, 76, 0.1);
-  border-radius: 50px;
+  border-radius: 10px;
   border: 1px solid ${colors.primary_gray.variant_two};
   background: ${colors.primary_gray.variant_two};
   padding: 1rem;

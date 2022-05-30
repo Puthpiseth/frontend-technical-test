@@ -6,7 +6,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // web-loader reduces the size of images size
+  // web-loader reduces the size of images
   loaders: [
     {
       test: /\.(jpe?g|png)$/i,

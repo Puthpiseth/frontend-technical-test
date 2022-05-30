@@ -26,6 +26,6 @@ const UserInfoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 5rem;
+  margin-left: 2rem;
   gap: 6px;
 `;

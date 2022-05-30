@@ -21,6 +21,7 @@
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-lottie-player": "^1.4.3",
     "sharp": "^0.30.5"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@testing-library/react": "^13.2.0",
     "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
+    "@types/react-lottie": "^1.2.6",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "babel-jest": "^28.1.0",
     "eslint": "^8.16.0",

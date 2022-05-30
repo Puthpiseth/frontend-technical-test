@@ -7,9 +7,9 @@ export const FormInputContainer = styled.form`
 
 export const FormInput = styled.input`
   width: 100%;
-  border-radius: 30px;
+  border-radius: 10px;
   border: 2px solid ${colors.primary_gray.variant_two};
-  padding: 0.4em;
+  padding: 0.6em;
   outline: none;
 
   &:focus {
