@@ -3,6 +3,9 @@ module.exports = {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
+  env: {
+    NEXT_APP_API_URL: process.env.NEXT_APP_API_URL,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
