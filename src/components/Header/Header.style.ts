@@ -7,26 +7,36 @@ interface MenuItemsProps {
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  max-width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: ${colors.white};
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
   box-shadow: 0px 2px 4px ${colors.primary_gray.variant_two};
-  position: fixed;
+  position: absolute;
   top: 0;
+
+  @media (min-width: 600px) {
+    padding: 0.5rem 3rem;
+  }
+  @media (min-width: 1000px) {
+    padding: 0.5rem 6rem;
+  }
+  @media (min-width: 1300px) {
+    padding: 0.5rem 10rem;
+  }
 `;
 
 export const MenuContainer = styled.div<MenuItemsProps>`
-  width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-right: 0.5rem;
   cursor: pointer;
-  gap: 10px;
+  gap: 0.5rem;
 
   @media (min-width: 600px) {
-    width: 15%;
+    gap: 2rem;
   }
 `;

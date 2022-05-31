@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import SendMessage from '../../../assets/send.svg';
 
-export const InputIcon = () => {
+export const SendMessageIcon = () => {
   return (
-    <InputDiv>
+    <IconDiv>
       <Image src={SendMessage} alt="send message icon"></Image>
-    </InputDiv>
+    </IconDiv>
   );
 };
 
-const InputDiv = styled.div`
+const IconDiv = styled.div`
   height: 25px;
   width: 25px;
   cursor: pointer;

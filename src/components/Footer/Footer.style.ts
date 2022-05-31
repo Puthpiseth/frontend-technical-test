@@ -8,7 +8,7 @@ export const FooterContainer = styled.div`
   align-items: center;
   background: ${colors.white};
   padding: 1.5rem;
-  box-shadow: 0px 2px 2px 3px ${colors.primary_gray.variant_two};
-  position: fixed;
+  border-top: 1px solid ${colors.primary_gray.variant_two};
+  position: absolute;
   bottom: 0;
 `;
