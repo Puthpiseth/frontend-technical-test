@@ -4,7 +4,14 @@ export const Layout = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 5px;
+  gap: 10px;
+`;
+
+export const NotFoundInfoDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

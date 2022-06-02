@@ -6,4 +6,8 @@ export const Medium = styled.p`
   font-weight: 400;
   color: gray;
   margin: 0;
+
+  @media (min-width: 1200px) {
+    font-size: 1.1rem;
+  }
 `;

@@ -22,7 +22,7 @@ interface WhiteBarProps {
 
 const WhiteBar = styled.div<WhiteBarProps>`
   width: 80%;
-  max-width: 500px;
+  max-width: 450px;
   display: flex;
   align-items: center;
   justify-content: flex-start;

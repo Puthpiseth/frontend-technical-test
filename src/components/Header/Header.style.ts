@@ -20,11 +20,11 @@ export const HeaderContainer = styled.div`
   @media (min-width: 600px) {
     padding: 0.5rem 3rem;
   }
-  @media (min-width: 1000px) {
-    padding: 0.5rem 6rem;
+  @media (min-width: 768px) {
+    padding: 0.5rem 8rem;
   }
-  @media (min-width: 1300px) {
-    padding: 0.5rem 10rem;
+  @media (min-width: 1200px) {
+    padding: 0.5rem 18rem;
   }
 `;
 

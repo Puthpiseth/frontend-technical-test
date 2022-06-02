@@ -5,6 +5,7 @@ import Lottie from 'react-lottie-player';
 import { findConversations } from '../api';
 import click from '../assets/click.json';
 import ConversationListItems from '../components/Conversation/ConversationListItems';
+import { Layout } from '../components/Layout';
 import { ConversationContainer, Medium } from '../components/UIElements';
 import { Conversation } from '../types/conversation';
 import { getLoggedUserId } from '../utils/getLoggedUserId';
@@ -20,13 +21,14 @@ const HomePage = () => {
   useEffect(() => {
     getConversations();
   }, []);
+
   return (
     <>
       <Head>
         <title>Home-Page</title>
         <meta name="description" content="Welcome to the Home Page"></meta>
       </Head>
-      <>
+      <Layout>
         <ConversationContainer>
           <Lottie loop animationData={click} play style={{ width: 250, height: 250 }} />
           <Medium>
@@ -38,7 +40,7 @@ const HomePage = () => {
             <ConversationListItems {...conversation} />
           </Link>
         ))}
-      </>
+      </Layout>
     </>
   );
 };
