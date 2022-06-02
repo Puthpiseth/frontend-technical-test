@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { colors } from '../../../styles';
 
 export const WhiteText = styled.p`
-  font-family: Work Sans;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;

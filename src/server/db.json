@@ -19,7 +19,7 @@
     {
       "id": 3,
       "recipientId": 1,
-      "recipientNickname": "Thibaut",
+      "recipientNickname": "Elodie",
       "senderId": 4,
       "senderNickname": "Elodie",
       "lastMessageTimestamp": 1625648667
@@ -74,6 +74,11 @@
     {
       "id": 4,
       "nickname": "Elodie",
+      "token": "xxxx"
+    },
+    {
+      "id": 5,
+      "nickname": "Ludo",
       "token": "xxxx"
     }
   ]

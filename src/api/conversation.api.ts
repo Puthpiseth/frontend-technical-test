@@ -1,15 +1,6 @@
-import { AxiosInstance } from 'axios';
+import { AxiosResponse } from 'axios';
 import { Conversation } from '../types/conversation';
+import axiosInstance from './request.api';
 
-export function createConversationsApi(axios: AxiosInstance) {
-  return {
-    async findConversations(userId: number): Promise<Conversation[]> {
-      return axios({
-        url: `/conversations/${userId}`,
-        method: 'GET',
-      }).then((response) => response.data);
-    },
-  };
-}
-
-export type ConversationsApi = ReturnType<typeof createConversationsApi>;
+export const findConversations = (userId: number): Promise<AxiosResponse<Conversation[]>> =>
+  axiosInstance.get(`/conversations/${userId}`);

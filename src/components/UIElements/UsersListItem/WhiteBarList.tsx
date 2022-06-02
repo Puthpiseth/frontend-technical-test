@@ -21,7 +21,8 @@ interface WhiteBarProps {
 }
 
 const WhiteBar = styled.div<WhiteBarProps>`
-  width: 20%;
+  width: 80%;
+  max-width: 500px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -37,14 +38,17 @@ const WhiteBar = styled.div<WhiteBarProps>`
     color: ${colors.primary_orange};
     border: 1px solid ${colors.primary_orange};
   }
+`;
 
-  @media (max-width: 1000px) {
-    display: none;
-  }
-  @media (min-width: 1000px) {
-    width: 30%;
-  }
-  @media (min-width: 1300px) {
-    width: 25%;
-  }
+export const UserInfoDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  gap: 6px;
+`;
+
+export const ConversationContainer = styled.div`
+  margin-bottom: 1.5rem;
 `;
