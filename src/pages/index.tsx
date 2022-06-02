@@ -30,7 +30,14 @@ const HomePage = () => {
       </Head>
       <Layout>
         <ConversationContainer>
-          <Lottie loop animationData={click} play style={{ width: 250, height: 250 }} />
+          <Lottie
+            loop
+            animationData={click}
+            play
+            style={{ width: 250, height: 250 }}
+            role="presentation"
+            aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
+          />
           <Medium>
             Please click on a conversation👇 or on Message 👆 <br />
             to start your discussion.
