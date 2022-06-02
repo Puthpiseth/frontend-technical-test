@@ -15,7 +15,7 @@ export const Header = () => {
           <MenuItem>Home</MenuItem>
         </Link>
         <Link href="/messages">
-          <MenuItem>Messages</MenuItem>
+          <MenuItem>Message</MenuItem>
         </Link>
       </MenuContainer>
     </HeaderContainer>

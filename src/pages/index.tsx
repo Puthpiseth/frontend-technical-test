@@ -32,7 +32,8 @@ const HomePage = () => {
         <ConversationContainer>
           <Lottie loop animationData={click} play style={{ width: 250, height: 250 }} />
           <Medium>
-            Please click on a conversation to start <br /> your discussion.
+            Please click on a conversation👇 or on Message 👆 <br />
+            to start your discussion.
           </Medium>
         </ConversationContainer>
         {conversations.map((conversation) => (
