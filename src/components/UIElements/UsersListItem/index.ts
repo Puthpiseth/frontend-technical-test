@@ -1,1 +1,1 @@
-export * from './WhiteBarList';
+export * from './WhiteBar';

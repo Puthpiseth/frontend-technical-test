@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { colors } from '../../../styles';
 
-export const FormInputContainer = styled.form`
-  width: 95%;
+export const FormInputLayout = styled.div`
+  width: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,4 +21,9 @@ export const FormInput = styled.input`
   &:focus {
     border: 1px solid ${colors.primary_orange};
   }
+`;
+
+export const FormButton = styled.button`
+  width: 15px;
+  height: 15px;
 `;

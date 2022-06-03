@@ -1,25 +1,28 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie-player';
-import { findConversations } from '../api';
+import { getUsers } from '../api/user';
 import click from '../assets/click.json';
-import ConversationListItems from '../components/Conversation/ConversationListItems';
 import { Layout } from '../components/Layout';
 import { ConversationContainer, Medium } from '../components/UIElements';
-import { Conversation } from '../types/conversation';
-import { getLoggedUserId } from '../utils/getLoggedUserId';
+import UserListItem from '../components/User/UserListItem';
+import { User } from '../types/user';
 
 const HomePage = () => {
-  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
-  const getConversations = async () => {
-    const fetchConversation = await findConversations(getLoggedUserId());
-    setConversations(fetchConversation.data);
+  const router = useRouter();
+  const navigateToConversation = (id: number) => () => {
+    router.push(`/conversations/${id}`);
   };
 
   useEffect(() => {
-    getConversations();
+    const fetchUsers = async () => {
+      const users = await getUsers();
+      setUsers(users.data);
+    };
+    fetchUsers();
   }, []);
 
   return (
@@ -29,24 +32,19 @@ const HomePage = () => {
         <meta name="description" content="Welcome to the Home Page"></meta>
       </Head>
       <Layout>
+        <Lottie
+          loop
+          animationData={click}
+          play
+          style={{ width: 250, height: 250 }}
+          role="presentation"
+          aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
+        />
         <ConversationContainer>
-          <Lottie
-            loop
-            animationData={click}
-            play
-            style={{ width: 250, height: 250 }}
-            role="presentation"
-            aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
-          />
-          <Medium>
-            Please click on a conversation👇 or on Message 👆 <br />
-            to start your discussion.
-          </Medium>
+          <Medium>Please click on a user to start your discussion 👇</Medium>
         </ConversationContainer>
-        {conversations.map((conversation) => (
-          <Link key={conversation.id} href={`/conversations/${conversation.id}`}>
-            <ConversationListItems {...conversation} />
-          </Link>
+        {users.map((user) => (
+          <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />
         ))}
       </Layout>
     </>

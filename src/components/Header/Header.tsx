@@ -14,9 +14,6 @@ export const Header = () => {
         <Link href="/">
           <MenuItem>Home</MenuItem>
         </Link>
-        <Link href="/messages">
-          <MenuItem>Message</MenuItem>
-        </Link>
       </MenuContainer>
     </HeaderContainer>
   );

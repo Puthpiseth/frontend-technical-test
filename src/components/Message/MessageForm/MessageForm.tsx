@@ -1,22 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { FormInput, FormInputContainer } from './MessageForm.style';
-import { SendMessageIcon } from './SendMessageIcon';
-
-interface MessageFormProps {
+import { SubmitButton } from '../../UIElements/Button/SubmitButton';
+import { FormInput, FormInputLayout } from './MessageForm.style';
+interface MessageFormProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  //   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  value: string;
-  placeholder: string;
+  onSubmit: (e: React.SyntheticEvent) => void;
   type: string;
+  placeholder: string;
 }
 
-const MessageForm = ({ onChange, placeholder, value = '', type = 'text' }: MessageFormProps) => {
+const MessageForm = ({ onChange, onSubmit, placeholder, type = 'text' }: MessageFormProps) => {
   return (
-    <FormInputContainer>
-      <FormInput value={value} onChange={onChange} placeholder={placeholder} type={type} required />
-      <SendMessageIcon />
-    </FormInputContainer>
+    <form onSubmit={onSubmit}>
+      <FormInputLayout>
+        <FormInput onChange={onChange} placeholder={placeholder} type={type} required />
+        <SubmitButton>Send</SubmitButton>
+      </FormInputLayout>
+    </form>
   );
 };
 

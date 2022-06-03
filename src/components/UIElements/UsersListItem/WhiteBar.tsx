@@ -3,24 +3,15 @@ import { colors } from '../../../styles/colors';
 
 interface WhiteBarListProps {
   // eslint-disable-next-line no-unused-vars
-  onclick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  clicked?: boolean;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
-export const WhiteBarList = ({ onclick, children, clicked }: WhiteBarListProps) => {
-  return (
-    <WhiteBar clicked={clicked} onClick={onclick}>
-      {children}
-    </WhiteBar>
-  );
+export const WhiteBar = ({ onClick, children }: WhiteBarListProps) => {
+  return <WhiteBarDiv onClick={onClick}>{children}</WhiteBarDiv>;
 };
 
-interface WhiteBarProps {
-  clicked?: boolean;
-}
-
-const WhiteBar = styled.div<WhiteBarProps>`
+const WhiteBarDiv = styled.div`
   width: 80%;
   max-width: 450px;
   display: flex;
@@ -38,17 +29,29 @@ const WhiteBar = styled.div<WhiteBarProps>`
     color: ${colors.primary_orange};
     border: 1px solid ${colors.primary_orange};
   }
+  &:focus {
+    color: ${colors.primary_orange};
+    border: 1px solid ${colors.primary_orange};
+  }
 `;
 
 export const UserInfoDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-left: 1rem;
   gap: 6px;
 `;
 
 export const ConversationContainer = styled.div`
   margin-bottom: 1.5rem;
+`;
+
+export const ConversationBarList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 `;

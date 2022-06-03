@@ -10,5 +10,6 @@ export const colors = {
     variant_three: '#808080',
     variant_four: '#f6f6f6',
     variant_five: '#fafafa',
+    variant_six: '#a9a9a9',
   },
 };

@@ -5,7 +5,7 @@ export const convertTimeStampToDate = (timestamp: number) => {
   });
 
   return dateFormat.format(new Date(timestamp * 1e3));
-}; // Month day, year
+}; // ouput: Month day, year
 
 export const convertTimeStampToDateTime = (timestamp: number) => {
   const dateFormat = new Intl.DateTimeFormat('en-US', {
@@ -14,4 +14,4 @@ export const convertTimeStampToDateTime = (timestamp: number) => {
   });
 
   return dateFormat.format(new Date(timestamp * 1e3));
-}; // Day, Number Month Year at HH:MM:SS
+}; // output: Day, Number Month Year at HH:MM:SS

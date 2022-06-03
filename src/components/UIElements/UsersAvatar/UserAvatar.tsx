@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 import { colors } from '../../../styles/colors';
-import { Conversation } from '../../../types/conversation';
 
-export const UserAvatar = (conversation: Conversation) => {
-  return <AvatarDiv>{conversation.recipientNickname[0]}</AvatarDiv>;
+interface UserProps {
+  userName: string;
+}
+
+export const UserAvatar = ({ userName }: UserProps) => {
+  return <AvatarDiv>{userName}</AvatarDiv>;
 };
 
 const AvatarDiv = styled.div`
