@@ -33,7 +33,7 @@ npm run dev
 Client side is running on http://localhost:3000
 Server side is running on https://localhost:3005
 
-### How to start the project
+### App screenshots
 
 - Mobile
   - Home
