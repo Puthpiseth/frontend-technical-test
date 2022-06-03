@@ -56,3 +56,13 @@ Server side is running on https://localhost:3005
 ![](src/assets/mobile-conversation.png)
 
 ![](src/assets/mobile-conversation-1.png)
+
+- Mobile
+  - 404
+
+![](src/assets/mobile-404.png)
+
+- Desktop
+  - 404
+
+![](src/assets/desktop-404.png)
