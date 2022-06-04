@@ -1,2 +1,3 @@
-export * from './Message';
+export * from './ChatBubble';
 export * from './MessageForm';
+export * from './MessagePage';

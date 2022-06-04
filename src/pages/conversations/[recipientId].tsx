@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { ConversationLayout } from '../../components/Conversation/ConversationList.style';
 import ConversationsList from '../../components/Conversation/ConversationsList';
-import Message from '../../components/Message/Message/Message';
+import Message from '../../components/Message/MessagePage/Message';
 
 const ConversationPage = () => {
   return (

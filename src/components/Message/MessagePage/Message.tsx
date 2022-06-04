@@ -8,10 +8,9 @@ import arrowLeft from '../../../assets/arrow-left.svg';
 import { Conversation } from '../../../types/conversation';
 import { Message } from '../../../types/message';
 import { Medium } from '../../UIElements';
-import { GrayChatBubble } from '../../UIElements/ChatBubble/GrayChatBubble';
+import { ChatBubble } from '../ChatBubble/ChatBubble';
 import MessageForm from '../MessageForm/MessageForm';
-import { ArrowLeft } from './ArrowLeftLayout';
-import { MessageBody, MessageContainer, MessageHeader } from './Message.style';
+import { ArrowLeft, MessageBody, MessageContainer, MessageHeader } from './Message.style';
 
 const Message = () => {
   const router = useRouter();
@@ -61,7 +60,7 @@ const Message = () => {
       </MessageHeader>
       <MessageBody>
         {conversationId ? (
-          messages.map((message) => <GrayChatBubble key={message.id}>{message.body}</GrayChatBubble>)
+          messages.map((message) => <ChatBubble key={message.id}>{message.body}</ChatBubble>)
         ) : (
           <Medium>👈 You have not had any conversations yet. Let&lsquo;s have a discussion now 🚀</Medium>
         )}

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '../../../styles/colors';
 
-export const GrayChatBubble = styled.div`
+export const ChatBubble = styled.div`
   width: 50%;
   display: flex;
   align-items: flex-start;

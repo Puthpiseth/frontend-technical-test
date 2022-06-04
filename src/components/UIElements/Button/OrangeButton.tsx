@@ -8,7 +8,7 @@ export const Button = styled.div`
   justify-content: center;
   text-align: center;
   padding: 0.5rem;
-  width: 50%;
+  width: 45%;
   border-radius: 20px;
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
   cursor: pointer;
@@ -16,9 +16,5 @@ export const Button = styled.div`
 
   &:hover {
     opacity: 0.9;
-  }
-
-  @media (min-width: 600px) {
-    width: 30%;
   }
 `;
