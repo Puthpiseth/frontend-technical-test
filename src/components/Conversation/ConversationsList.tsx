@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { findConversationsByUserId } from '../../api';
 import { Conversation } from '../../types/conversation';
 import { convertTimeStampToDate } from '../../utils/dates';
-import { Layout } from '../Layout';
 import { ConversationBarList } from '../UIElements';
 import UserListItem from '../User/UserListItem';
 
@@ -26,20 +25,16 @@ const ConversationsList = () => {
   };
 
   return (
-    <>
-      <Layout>
-        <ConversationBarList>
-          {conversations.map((conversation) => (
-            <UserListItem
-              userNickname={conversation.recipientNickname}
-              timestamp={convertTimeStampToDate(conversation.lastMessageTimestamp)}
-              key={conversation.id}
-              onClick={navigateToMessage(conversation.id)}
-            />
-          ))}
-        </ConversationBarList>
-      </Layout>
-    </>
+    <ConversationBarList>
+      {conversations.map((conversation) => (
+        <UserListItem
+          userNickname={conversation.recipientNickname}
+          timestamp={convertTimeStampToDate(conversation.lastMessageTimestamp)}
+          key={conversation.id}
+          onClick={navigateToMessage(conversation.id)}
+        />
+      ))}
+    </ConversationBarList>
   );
 };
 

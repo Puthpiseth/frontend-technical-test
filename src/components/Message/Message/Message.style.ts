@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '../../../styles/colors';
 
-export const MessageLayoutInner = styled.div`
+export const MessageContainer = styled.div`
   width: 100%;
   height: 75vh;
   max-width: 700px;
@@ -15,4 +15,25 @@ export const MessageLayoutInner = styled.div`
   border-radius: 10px;
   border: 1px solid ${colors.primary_gray.variant_two};
   overflow-y: scroll;
+`;
+
+export const MessageLayout = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const MessageHeader = styled.div`
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const MessageBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 2rem;
 `;

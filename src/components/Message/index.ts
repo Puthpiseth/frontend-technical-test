@@ -1,2 +1,2 @@
-export * from './MessageContainer';
+export * from './Message';
 export * from './MessageForm';
