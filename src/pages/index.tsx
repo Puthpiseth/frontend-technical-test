@@ -41,7 +41,9 @@ const HomePage = () => {
           aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
         />
         <ConversationContainer>
-          <Medium>Please click on a user to start your discussion 👇</Medium>
+          <Medium>
+            Hello, welcome to the Leboncoin chat plateform. Please click on a user to start your discussion 👇
+          </Medium>
         </ConversationContainer>
         {users.map((user) => (
           <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />

@@ -29,12 +29,12 @@ const ConversationsList = () => {
       <ConversationListHeader>
         <ConversationListTitle>All discussions</ConversationListTitle>
       </ConversationListHeader>
-      {conversations.map((conversation) => (
+      {conversations.map((conversation, index) => (
         <UserListItem
           userNickname={conversation.recipientNickname}
           timestamp={convertTimeStampToDate(conversation.lastMessageTimestamp)}
-          key={conversation.id}
-          onClick={navigateToMessage(conversation.id)}
+          key={index}
+          onClick={navigateToMessage(index)}
         />
       ))}
     </ConversationBarList>

@@ -24,17 +24,18 @@ export const MessageLayout = styled.div`
 `;
 
 export const MessageHeader = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const MessageBody = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 2rem 0;
   overflow-y: scroll;
 `;
 

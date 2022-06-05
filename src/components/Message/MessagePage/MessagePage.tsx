@@ -46,9 +46,8 @@ const MessagePage = ({ userId }: MessageProps) => {
       id: messageId,
       conversationId: Number(conversationId),
       body: messageInProgress,
-      // TODO: set the authorId
       authorId: userId,
-      timestamp: Date.now(),
+      timestamp: Date.now() / 1000,
     };
     setMessages((messages) => {
       if (!messages && !messages.length) {
@@ -70,12 +69,12 @@ const MessagePage = ({ userId }: MessageProps) => {
       <MessageBody>
         {conversationId && messages && messages.length ? (
           messages.map((message, index) => {
-            const fromUser = message.authorId === userId;
-            const username = fromUser ? 'Me' : '';
+            const isUser = message.authorId === userId;
+            const username = isUser ? 'Me' : '';
             return (
               <ChatBubble
                 content={message.body}
-                fromUser={fromUser}
+                isUser={isUser}
                 key={index}
                 timestamp={convertTimeStampToDateTime(message.timestamp)}
                 username={username}
