@@ -4,14 +4,13 @@ import { FormInput, FormInputLayout } from './MessageForm.style';
 interface MessageFormProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.SyntheticEvent) => void;
-  type: string;
-  placeholder: string;
+  value: string;
 }
 
-const MessageForm = ({ onChange, onSubmit, placeholder, type = 'text' }: MessageFormProps) => {
+const MessageForm = ({ onChange, onSubmit, value }: MessageFormProps) => {
   return (
     <FormInputLayout onSubmit={onSubmit}>
-      <FormInput onChange={onChange} placeholder={placeholder} type={type} required />
+      <FormInput onChange={onChange} value={value} placeholder={'Send Message'} type="text" required />
       <SubmitButton>Send</SubmitButton>
     </FormInputLayout>
   );

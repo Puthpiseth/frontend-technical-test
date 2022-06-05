@@ -9,12 +9,11 @@ export const MessageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 15px;
-  align-items: flex-start;
+  align-items: center;
   background: ${colors.primary_gray.variant_five};
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
   border-radius: 10px;
   border: 1px solid ${colors.primary_gray.variant_two};
-  overflow-y: scroll;
 `;
 
 export const MessageLayout = styled.div`
@@ -32,10 +31,11 @@ export const MessageHeader = styled.div`
 `;
 
 export const MessageBody = styled.div`
+  width: 95%;
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
   gap: 2rem;
+  overflow-y: scroll;
 `;
 
 export const ArrowLeft = styled.div`

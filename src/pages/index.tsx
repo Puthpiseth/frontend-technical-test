@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie-player';
-import { getUsers } from '../api/user';
+import { getUsers } from '../api/user.api';
 import click from '../assets/click.json';
 import { Layout } from '../components/Layout';
 import { ConversationContainer, Medium } from '../components/UIElements';

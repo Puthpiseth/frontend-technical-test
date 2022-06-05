@@ -4,6 +4,3 @@ import axiosInstance from './request.api';
 
 export const findConversationsByUserId = (userId: string): Promise<AxiosResponse<Conversation[]>> =>
   axiosInstance.get(`/conversations/${userId}`);
-
-export const getConversation = (conversationsId: string): Promise<AxiosResponse<Conversation>> =>
-  axiosInstance.get(`/conversations/${conversationsId}`);

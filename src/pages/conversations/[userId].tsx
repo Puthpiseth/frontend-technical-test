@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ConversationLayout } from '../../components/Conversation/ConversationList.style';
 import ConversationsList from '../../components/Conversation/ConversationsList';
-import Message from '../../components/Message/MessagePage/Message';
+import MessagePage from '../../components/Message/MessagePage/MessagePage';
 
 const ConversationPage = () => {
+  const router = useRouter();
+  const { userId } = router.query;
   return (
     <>
       <Head>
@@ -12,7 +15,7 @@ const ConversationPage = () => {
       </Head>
       <ConversationLayout>
         <ConversationsList />
-        <Message />
+        <MessagePage userId={Number(userId)} />
       </ConversationLayout>
     </>
   );

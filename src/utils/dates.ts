@@ -9,8 +9,12 @@ export const convertTimeStampToDate = (timestamp: number) => {
 
 export const convertTimeStampToDateTime = (timestamp: number) => {
   const dateFormat = new Intl.DateTimeFormat('en-US', {
-    dateStyle: 'full',
-    timeStyle: 'long',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
   });
 
   return dateFormat.format(new Date(timestamp * 1e3));

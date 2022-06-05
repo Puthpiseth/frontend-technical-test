@@ -3,22 +3,22 @@ import { useEffect, useState } from 'react';
 import { findConversationsByUserId } from '../../api';
 import { Conversation } from '../../types/conversation';
 import { convertTimeStampToDate } from '../../utils/dates';
-import { ConversationBarList } from '../UIElements';
 import UserListItem from '../User/UserListItem';
+import { ConversationBarList, ConversationListHeader, ConversationListTitle } from './ConversationList.style';
 
 const ConversationsList = () => {
   const router = useRouter();
   const pathname = router.asPath.split('?')[0];
-  const { recipientId } = router.query;
+  const { userId } = router.query;
   const [conversations, setConversations] = useState<Conversation[]>([]);
 
   useEffect(() => {
-    const fetConversations = async () => {
-      const conversationsList = await findConversationsByUserId(recipientId as string);
+    const fetchConversations = async () => {
+      const conversationsList = await findConversationsByUserId(userId as string);
       setConversations(conversationsList.data);
     };
-    fetConversations();
-  }, [recipientId]);
+    fetchConversations();
+  }, [userId]);
 
   const navigateToMessage = (conversationId: number) => () => {
     router.push({ pathname, query: { conversationId } });
@@ -26,6 +26,9 @@ const ConversationsList = () => {
 
   return (
     <ConversationBarList>
+      <ConversationListHeader>
+        <ConversationListTitle>All discussions</ConversationListTitle>
+      </ConversationListHeader>
       {conversations.map((conversation) => (
         <UserListItem
           userNickname={conversation.recipientNickname}

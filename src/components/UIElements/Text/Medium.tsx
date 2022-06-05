@@ -7,6 +7,7 @@ export const Medium = styled.p`
   font-style: normal;
   font-weight: 500;
   text-align: center;
+  line-height: 1.3rem;
   color: ${colors.primary_gray.variant_six};
   margin: 0 auto;
 

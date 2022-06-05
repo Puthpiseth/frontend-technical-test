@@ -1,14 +1,32 @@
 import styled from '@emotion/styled';
-import { colors } from '../../../styles/colors';
+import { ChatBubbleBox } from '../ChatBubble/ChatBubble.style';
 
-export const ChatBubble = styled.div`
-  width: 50%;
+export interface ChatBubbleProps {
+  content: string;
+  fromUser: boolean;
+  timestamp: string;
+  username: string;
+}
+export interface ChatBubbleWrapperProps {
+  fromUser: boolean;
+}
+
+const ChatBubbleWrapper = styled.div<ChatBubbleWrapperProps>`
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: ${(props) => (props.fromUser ? 'flex-end' : 'flex-start')};
   justify-content: center;
-  box-shadow: 0px 0px 2px rgba(48, 56, 76, 0.1);
-  border-radius: 10px;
-  border: 1px solid ${colors.primary_gray.variant_two};
-  background: ${colors.primary_gray.variant_two};
-  padding: 1rem;
+  gap: 1rem;
 `;
+
+export const ChatBubble = ({ content, fromUser, timestamp, username }: ChatBubbleProps) => {
+  return (
+    <ChatBubbleWrapper fromUser={fromUser}>
+      <span>{username}</span>
+      <ChatBubbleBox>{content}</ChatBubbleBox>
+      <span>{timestamp}</span>
+    </ChatBubbleWrapper>
+  );
+};
+
+export default ChatBubble;

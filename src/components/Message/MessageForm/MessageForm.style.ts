@@ -15,7 +15,7 @@ export const FormInput = styled.input`
   border-radius: 10px;
   border: 2px solid ${colors.primary_gray.variant_two};
   background: ${colors.white};
-  padding: 0.6em;
+  padding: 8px;
   outline: none;
 
   &:focus {
