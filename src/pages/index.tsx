@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie-player';
 import { getUsers } from '../api/user.api';
 import click from '../assets/click.json';
-import { Layout } from '../components/Layout';
 import { ConversationContainer, Medium } from '../components/UIElements';
 import UserListItem from '../components/User/UserListItem';
 import { User } from '../types/user';
@@ -31,24 +30,22 @@ const HomePage = () => {
         <title>Home-Page</title>
         <meta name="description" content="Welcome to the Home Page"></meta>
       </Head>
-      <Layout>
-        <Lottie
-          loop
-          animationData={click}
-          play
-          style={{ width: 250, height: 250 }}
-          role="presentation"
-          aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
-        />
-        <ConversationContainer>
-          <Medium>
-            Hello, welcome to the Leboncoin chat plateform. Please click on a user to start your discussion 👇
-          </Medium>
-        </ConversationContainer>
-        {users.map((user) => (
-          <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />
-        ))}
-      </Layout>
+      <Lottie
+        loop
+        animationData={click}
+        play
+        style={{ width: 150, height: 150 }}
+        role="presentation"
+        aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
+      />
+      <ConversationContainer>
+        <Medium>
+          Hello, welcome to the Leboncoin chat plateform. Please click on a user to start your discussion 👇
+        </Medium>
+      </ConversationContainer>
+      {users.map((user) => (
+        <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />
+      ))}
     </>
   );
 };

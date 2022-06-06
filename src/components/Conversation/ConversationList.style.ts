@@ -20,6 +20,7 @@ export const ConversationLayout = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding-bottom: 2rem;
 `;
 
 export const ConversationListTitle = styled.div`
@@ -31,10 +32,10 @@ export const ConversationListTitle = styled.div`
 
 export const ConversationMobileLayout = styled.div`
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 12rem;
+  padding-top: 10rem;
   gap: 2rem;
 `;

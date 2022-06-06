@@ -45,5 +45,5 @@ export const UserInfoDiv = styled.div`
 `;
 
 export const ConversationContainer = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 `;

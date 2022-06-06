@@ -1,4 +1,8 @@
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
@@ -16,4 +20,4 @@ module.exports = {
       loaders: ['file-loader', 'webp-loader?{quality: 13}'],
     },
   ],
-};
+});
