@@ -8,8 +8,6 @@ import { Message } from '../../../types/message';
 import { convertTimeStampToDateTime } from '../../../utils/dates';
 import { Medium } from '../../UIElements';
 import { ChatBubble } from '../ChatBubble';
-
-// import { ChatBubble } from '../ChatBubble/ChatBubble.style';
 import MessageForm from '../MessageForm/MessageForm';
 import { ArrowLeft, MessageBody, MessageContainer, MessageHeader } from './MessagePage.style';
 

@@ -13,7 +13,7 @@ export const WhiteBar = ({ onClick, children }: WhiteBarListProps) => {
 
 const WhiteBarDiv = styled.div`
   width: 80%;
-  max-width: 450px;
+  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: flex-start;

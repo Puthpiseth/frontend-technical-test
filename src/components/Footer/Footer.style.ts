@@ -9,6 +9,4 @@ export const FooterContainer = styled.div`
   background: ${colors.white};
   padding: 1.5rem;
   border-top: 1px solid ${colors.primary_gray.variant_two};
-  position: absolute;
-  bottom: 0;
 `;

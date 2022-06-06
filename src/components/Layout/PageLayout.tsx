@@ -2,12 +2,19 @@ import styled from '@emotion/styled';
 
 export const Layout = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
   gap: 10px;
+  overflow-y: scroll;
+
+  @media (min-width: 1200px) {
+    padding-top: 3.5rem;
+    overflow: hidden;
+  }
 `;
 
 export const NotFoundInfoDiv = styled.div`
