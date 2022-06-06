@@ -12,13 +12,13 @@ export const HeaderContainer = styled.div`
   align-items: center;
   background: ${colors.white};
   margin: 0 auto;
-  padding: 0.5rem 2rem;
+  padding: 0.8rem 2rem;
   box-shadow: 0px 2px 4px ${colors.primary_gray.variant_two};
   position: absolute;
   top: 0;
 
   @media (min-width: 800px) {
-    padding: 0.5rem 7rem;
+    padding: 0.8rem 7rem;
   }
 `;
 

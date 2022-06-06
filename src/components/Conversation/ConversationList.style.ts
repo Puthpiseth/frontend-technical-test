@@ -11,6 +11,7 @@ export const ConversationBarList = styled.div`
 
   @media (min-width: 1200px) {
     align-items: flex-start;
+    width: 30%;
   }
 `;
 
@@ -19,11 +20,6 @@ export const ConversationLayout = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-`;
-
-export const ConversationListHeader = styled.div`
-  width: 100%;
-  padding: 1rem;
 `;
 
 export const ConversationListTitle = styled.div`

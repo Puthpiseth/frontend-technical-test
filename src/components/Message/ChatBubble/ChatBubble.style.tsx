@@ -13,11 +13,11 @@ export const ChatBubbleWrapper = styled.div<ChatBubbleWrapperProps>`
 export const ChatBubbleUsername = styled.div`
   display: flex;
   align-self: flex-end;
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 export const GrayChatBubbleBox = styled.div`
-  width: 50%;
+  width: 80%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -27,10 +27,14 @@ export const GrayChatBubbleBox = styled.div`
   background: ${colors.primary_gray.variant_two};
   color: ${colors.black};
   padding: 1rem;
+
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
 `;
 
 export const OrangeChatBubbleBox = styled.div`
-  width: 50%;
+  width: 80%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -40,4 +44,8 @@ export const OrangeChatBubbleBox = styled.div`
   background: ${colors.primary_orange};
   color: ${colors.white};
   padding: 1rem;
+
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
 `;

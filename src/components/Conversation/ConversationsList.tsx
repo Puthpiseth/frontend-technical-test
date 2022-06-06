@@ -4,7 +4,7 @@ import { findConversationsByUserId } from '../../api';
 import { Conversation } from '../../types/conversation';
 import { convertTimeStampToDate } from '../../utils/dates';
 import UserListItem from '../User/UserListItem';
-import { ConversationBarList, ConversationListHeader, ConversationListTitle } from './ConversationList.style';
+import { ConversationBarList } from './ConversationList.style';
 
 const ConversationsList = () => {
   const router = useRouter();
@@ -26,9 +26,6 @@ const ConversationsList = () => {
 
   return (
     <ConversationBarList>
-      <ConversationListHeader>
-        <ConversationListTitle>All discussions</ConversationListTitle>
-      </ConversationListHeader>
       {conversations.map((conversation, index) => (
         <UserListItem
           userNickname={conversation.recipientNickname}

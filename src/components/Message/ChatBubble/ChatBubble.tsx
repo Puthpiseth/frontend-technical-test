@@ -1,3 +1,4 @@
+import { Small } from '../../UIElements';
 import { ChatBubbleUsername, ChatBubbleWrapper, GrayChatBubbleBox, OrangeChatBubbleBox } from './ChatBubble.style';
 
 interface ChatBubbleProps {
@@ -15,7 +16,7 @@ export const ChatBubble = ({ content, isUser, timestamp, username }: ChatBubbleP
     <ChatBubbleWrapper isUser={isUser}>
       <ChatBubbleUsername>{username}</ChatBubbleUsername>
       {isUser ? <OrangeChatBubbleBox>{content}</OrangeChatBubbleBox> : <GrayChatBubbleBox>{content}</GrayChatBubbleBox>}
-      <span>{timestamp}</span>
+      <Small>{timestamp}</Small>
     </ChatBubbleWrapper>
   );
 };
