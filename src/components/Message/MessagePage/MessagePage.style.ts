@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '../../../styles/colors';
 
 export const MessageContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 75vh;
   max-width: 700px;
@@ -40,9 +41,8 @@ export const MessageBody = styled.div`
 `;
 
 export const ArrowLeft = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  position: absolute;
+  top: 1rem;
   padding: 5px;
   background: ${colors.primary_gray.variant_two};
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
@@ -52,4 +52,13 @@ export const ArrowLeft = styled.div`
   &:hover {
     background: ${colors.primary_gray.regular};
   }
+`;
+
+export const Banner = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: ${colors.black};
 `;

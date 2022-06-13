@@ -2,35 +2,31 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { findMessagesByConversationId } from '../../../api/message.api';
+import { useDispatch, useSelector } from 'react-redux';
 import arrowLeft from '../../../assets/arrow-left.svg';
+import { addMessage, MessageState } from '../../../state/message';
+import { ConversationState, resetUserName } from '../../../state/user';
 import { Message } from '../../../types/message';
 import { convertTimeStampToDateTime } from '../../../utils/dates';
-import { Medium } from '../../UIElements';
+import { BlackText, Medium } from '../../UIElements';
 import { ChatBubble } from '../ChatBubble';
 import MessageForm from '../MessageForm/MessageForm';
-import { ArrowLeft, MessageBody, MessageContainer, MessageHeader } from './MessagePage.style';
+import { ArrowLeft, Banner, MessageBody, MessageContainer, MessageHeader } from './MessagePage.style';
 
 interface MessageProps {
   userId: number;
 }
 const MessagePage = ({ userId }: MessageProps) => {
+  const recipientName = useSelector((state: ConversationState) => state['user'].recipientName);
+  const messages = useSelector((state: MessageState) => state['message']).messages;
+  const dispatch = useDispatch();
   const router = useRouter();
-  // TODO: add state management in the future to keep data on refresh
   const [messageInProgress, setMessageInProgess] = useState<string>('');
-  const [messages, setMessages] = useState<Message[]>([]);
   const { conversationId } = router.query;
 
-  // Load previous messages from the api backend if any
   useEffect(() => {
-    const findMessages = async () => {
-      const fetchMessages = await findMessagesByConversationId(conversationId as string);
-      if (fetchMessages) {
-        setMessages(fetchMessages.data);
-      }
-    };
-    conversationId && findMessages();
-  }, [conversationId]);
+    dispatch(resetUserName());
+  }, [dispatch]);
 
   const handleWriteMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
     // TODO: set a debounce delay, 200ms?
@@ -39,7 +35,7 @@ const MessagePage = ({ userId }: MessageProps) => {
 
   const handleAddMessage = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const messageId = messages && messages.length ? messages.length : 0;
+    const messageId = messages && messages.length ? messages[messages.length - 1].id + 1 : 0;
     const message: Message = {
       id: messageId,
       conversationId: Number(conversationId),
@@ -47,12 +43,7 @@ const MessagePage = ({ userId }: MessageProps) => {
       authorId: userId,
       timestamp: Date.now() / 1000,
     };
-    setMessages((messages) => {
-      if (!messages && !messages.length) {
-        return [message];
-      }
-      return messages.concat(message);
-    });
+    dispatch(addMessage(message));
   };
 
   return (
@@ -63,9 +54,14 @@ const MessagePage = ({ userId }: MessageProps) => {
             <Image src={arrowLeft} width={15} height={15} alt="back arrow icon"></Image>
           </ArrowLeft>
         </Link>
+        {recipientName && (
+          <Banner>
+            <BlackText>Conversation avec {recipientName}</BlackText>
+          </Banner>
+        )}
       </MessageHeader>
       <MessageBody>
-        {conversationId && messages && messages.length ? (
+        {messages && messages.length ? (
           messages.map((message, index) => {
             const isUser = message.authorId === userId;
             const username = isUser ? 'Me' : '';

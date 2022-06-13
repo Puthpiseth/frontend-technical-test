@@ -1,14 +1,18 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { findConversationsByUserId } from '../../api';
+import { fetchMessages } from '../../state/asyncRequest';
+import { AppDispatchType } from '../../state/store';
+import { getUserName } from '../../state/user';
 import { Conversation } from '../../types/conversation';
 import { convertTimeStampToDate } from '../../utils/dates';
 import UserListItem from '../User/UserListItem';
 import { ConversationBarList } from './ConversationList.style';
 
 const ConversationsList = () => {
+  const dispatch = useDispatch<AppDispatchType>();
   const router = useRouter();
-  const pathname = router.asPath.split('?')[0];
   const { userId } = router.query;
   const [conversations, setConversations] = useState<Conversation[]>([]);
 
@@ -16,12 +20,17 @@ const ConversationsList = () => {
     const fetchConversations = async () => {
       const conversationsList = await findConversationsByUserId(userId as string);
       setConversations(conversationsList.data);
+      if (conversationsList.data[0]) {
+        dispatch(getUserName(conversationsList.data[0].recipientNickname));
+        dispatch(fetchMessages(conversationsList.data[0].id));
+      }
     };
     fetchConversations();
-  }, [userId]);
+  }, [dispatch, userId]);
 
-  const navigateToMessage = (conversationId: number) => () => {
-    router.push({ pathname, query: { conversationId } });
+  const handleLoadMessages = (conversationId: number, recipientNickname: string) => () => {
+    dispatch(getUserName(recipientNickname));
+    dispatch(fetchMessages(conversationId));
   };
 
   return (
@@ -31,7 +40,7 @@ const ConversationsList = () => {
           userNickname={conversation.recipientNickname}
           timestamp={convertTimeStampToDate(conversation.lastMessageTimestamp)}
           key={index}
-          onClick={navigateToMessage(index)}
+          onClick={handleLoadMessages(conversation.id, conversation.recipientNickname)}
         />
       ))}
     </ConversationBarList>
