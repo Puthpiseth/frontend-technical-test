@@ -17,7 +17,7 @@ export const Layout = styled.div`
   }
 `;
 
-export const NotFoundInfoDiv = styled.div`
+export const ErrorInfoBoxDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

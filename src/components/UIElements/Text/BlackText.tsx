@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '../../../styles';
 
 export const BlackText = styled.p`
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5em;
