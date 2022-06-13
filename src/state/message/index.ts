@@ -23,6 +23,9 @@ export const userSlice = createSlice({
       state.messages = state.messages.concat(action.payload);
       return state;
     },
+    resetMessage() {
+      return initialState;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -36,5 +39,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { addMessage } = userSlice.actions;
+export const { addMessage, resetMessage } = userSlice.actions;
 export default userSlice.reducer;

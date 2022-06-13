@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { findConversationsByUserId } from '../../api';
 import { fetchMessages } from '../../state/asyncRequest';
+import { resetMessage } from '../../state/message';
 import { AppDispatchType } from '../../state/store';
 import { getUserName } from '../../state/user';
 import { Conversation } from '../../types/conversation';
@@ -31,6 +32,7 @@ const ConversationsList = () => {
   const handleLoadMessages = (conversationId: number, recipientNickname: string) => () => {
     dispatch(getUserName(recipientNickname));
     dispatch(fetchMessages(conversationId));
+    dispatch(resetMessage());
   };
 
   return (

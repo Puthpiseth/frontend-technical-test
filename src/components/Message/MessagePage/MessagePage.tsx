@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import arrowLeft from '../../../assets/arrow-left.svg';
-import { addMessage, MessageState } from '../../../state/message';
+import { addMessage, MessageState, resetMessage } from '../../../state/message';
 import { ConversationState, resetUserName } from '../../../state/user';
 import { Message } from '../../../types/message';
 import { convertTimeStampToDateTime } from '../../../utils/dates';
@@ -25,7 +25,10 @@ const MessagePage = ({ userId }: MessageProps) => {
   const { conversationId } = router.query;
 
   useEffect(() => {
+    // Reset a username to initial state while clicking a user
     dispatch(resetUserName());
+    // Reset a message to initial state and prevent duplicating messages while clicking a user
+    dispatch(resetMessage());
   }, [dispatch]);
 
   const handleWriteMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
