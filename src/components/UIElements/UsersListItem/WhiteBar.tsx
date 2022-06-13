@@ -7,11 +7,14 @@ interface WhiteBarListProps {
   children: React.ReactNode;
 }
 
+export interface WhiteBarProps {
+  isSelected?: boolean;
+}
 export const WhiteBar = ({ onClick, children }: WhiteBarListProps) => {
   return <WhiteBarDiv onClick={onClick}>{children}</WhiteBarDiv>;
 };
 
-const WhiteBarDiv = styled.div`
+const WhiteBarDiv = styled.div<WhiteBarProps>`
   width: 80%;
   max-width: 600px;
   display: flex;
@@ -19,17 +22,14 @@ const WhiteBarDiv = styled.div`
   justify-content: flex-start;
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
   border-radius: 10px;
-  border: 1px solid ${colors.primary_gray.variant_two};
+  border: ${(props) =>
+    props.isSelected ? `1px solid ${colors.primary_orange}` : `1px solid ${colors.primary_gray.variant_two}`};
   padding: 0.8rem 1rem;
   cursor: pointer;
   background: ${colors.primary_gray.variant_five};
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    color: ${colors.primary_orange};
-    border: 1px solid ${colors.primary_orange};
-  }
-  &:focus {
     color: ${colors.primary_orange};
     border: 1px solid ${colors.primary_orange};
   }

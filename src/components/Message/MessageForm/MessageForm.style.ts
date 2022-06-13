@@ -7,6 +7,8 @@ export const FormInputLayout = styled.form`
   justify-content: center;
   align-items: strech;
   gap: 0.5em;
+  padding: 1rem 1rem 0 1rem;
+  border-top: 1px solid ${colors.primary_gray.regular};
 `;
 
 export const FormInput = styled.input`

@@ -9,7 +9,7 @@ export const MessageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px 15px;
+  padding: 15px 0;
   align-items: center;
   background: ${colors.primary_gray.variant_five};
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
@@ -29,6 +29,8 @@ export const MessageHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid ${colors.primary_gray.regular};
+  padding-bottom: 1rem;
 `;
 
 export const MessageBody = styled.div`
@@ -36,19 +38,20 @@ export const MessageBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   overflow-y: scroll;
 `;
 
 export const ArrowLeft = styled.div`
   position: absolute;
-  top: 1rem;
+  left: 1rem;
   padding: 5px;
   background: ${colors.primary_gray.variant_two};
   box-shadow: 0px 0px 4px rgba(48, 56, 76, 0.1);
   border-radius: 50%;
   border: 1px solid ${colors.primary_gray.regular};
   cursor: pointer;
+
   &:hover {
     background: ${colors.primary_gray.regular};
   }
@@ -59,6 +62,4 @@ export const Banner = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  color: ${colors.black};
 `;
