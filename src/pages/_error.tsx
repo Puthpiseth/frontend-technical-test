@@ -22,7 +22,7 @@ const ErrorPage = () => {
             play
             style={{ width: 350, height: 350 }}
             role="presentation"
-            aria-label="An animation svg of a handsome guy standing in front of 404 sign"
+            aria-label="A man looking at 500 error device"
           />
           <Description>Sorry, something went wrong</Description>
           <Button onClick={() => router.push('/')}>
