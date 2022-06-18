@@ -14,7 +14,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "types": ["cypress", "node"]
   },
   "include": ["next-env.d.ts", "declare.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

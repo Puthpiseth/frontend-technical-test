@@ -37,6 +37,7 @@ const HomePage = () => {
         style={{ width: 150, height: 150 }}
         role="presentation"
         aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
+        data-test="homepage-animated-svg"
       />
       <ConversationContainer>
         <Medium>
