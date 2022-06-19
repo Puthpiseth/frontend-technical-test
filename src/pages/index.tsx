@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie-player';
 import { getUsers } from '../api/user.api';
 import click from '../assets/click.json';
+import { UserListLayout } from '../components/Layout';
 import { ConversationContainer, Medium } from '../components/UIElements';
 import UserListItem from '../components/User/UserListItem';
 import { User } from '../types/user';
@@ -37,16 +38,18 @@ const HomePage = () => {
         style={{ width: 150, height: 150 }}
         role="presentation"
         aria-label="An animation svg of a beautiful lady sitting and clicking a screen"
-        data-test="homepage-animated-svg"
+        data-cy="homepage-animated-svg"
       />
       <ConversationContainer>
         <Medium>
           Hello, welcome to the Leboncoin chat plateform. Please click on a user to start your discussion 👇
         </Medium>
       </ConversationContainer>
-      {users.map((user) => (
-        <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />
-      ))}
+      <UserListLayout data-cy="user-list">
+        {users.map((user) => (
+          <UserListItem key={user.id} userNickname={user.nickname} onClick={navigateToConversation(user.id)} />
+        ))}
+      </UserListLayout>
     </>
   );
 };

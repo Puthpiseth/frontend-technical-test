@@ -12,7 +12,7 @@ export const Header = () => {
       </Link>
       <MenuContainer>
         <Link href="/">
-          <MenuItem data-test="menu-items">Home</MenuItem>
+          <MenuItem data-cy="menu-items">Home</MenuItem>
         </Link>
       </MenuContainer>
     </HeaderContainer>

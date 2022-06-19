@@ -36,7 +36,7 @@ const ConversationsList = () => {
   };
 
   return (
-    <ConversationBarList>
+    <ConversationBarList data-cy="conversation-list">
       {conversations.map((conversation, index) => (
         <UserListItem
           userNickname={conversation.recipientNickname}

@@ -54,7 +54,7 @@ const MessagePage = ({ userId }: MessageProps) => {
       <MessageHeader>
         <Link href="/">
           <ArrowLeft>
-            <Image src={arrowLeft} width={15} height={15} alt="back arrow icon" data-test="arrow-back"></Image>
+            <Image src={arrowLeft} width={15} height={15} alt="back arrow icon" data-cy="arrow-back"></Image>
           </ArrowLeft>
         </Link>
         {recipientName && (
