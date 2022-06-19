@@ -10,8 +10,15 @@ interface MessageFormProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const MessageForm = ({ onChange, onSubmit, value }: MessageFormProps) => {
   return (
     <FormInputLayout onSubmit={onSubmit}>
-      <FormInput onChange={onChange} value={value} placeholder={'Send Message'} type="text" required />
-      <SubmitButton>Send</SubmitButton>
+      <FormInput
+        onChange={onChange}
+        value={value}
+        placeholder={'Send Message'}
+        type="text"
+        required
+        data-cy="message-form"
+      />
+      <SubmitButton data-cy="submit-btn">Send</SubmitButton>
     </FormInputLayout>
   );
 };

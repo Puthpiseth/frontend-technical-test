@@ -13,8 +13,8 @@ describe('Conversation page', () => {
   });
 
   it('should user write and add messages', () => {
-    cy.get('form').type('What can I do for you ?').should('have.length.above', 0);
-    cy.contains('Send').click();
+    cy.get('[data-cy="message-form"]').type('What can I do for you ?').should('have.length.above', 0);
+    cy.get('[data-cy="submit-btn"]').should('contain', 'Send').click();
   });
 
   it('Nagivate back to home page', () => {
