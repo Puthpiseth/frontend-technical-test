@@ -1,3 +1,10 @@
+# Context :
+
+At leboncoin, our users can share messages about a transaction, or ask for informations about any products.
+
+Your job is to create the interface to consult those messages.
+The interface needs to work on both desktop & mobile devices.
+
 # Instructions 💡
 
 Clone the repository and install dependencies
@@ -30,20 +37,29 @@ or
 npm run dev
 ```
 
-Client side is running on http://localhost:3000
-Server side is running on https://localhost:3005
+- Client side is running on http://localhost:3000
+- Server side is running on https://localhost:3005
 
-# Live App 📽
+# Project Configuration ⚙️
 
-![caption](src/assets/Live-App.gif)
+From my experience, a team of developers have their own way of programming which may end up with different coding styles. We sometimes lose time in PRs for feedback.
 
-#### Server Error 500 page
+As a teamwork, we want to make sure that all code is linted and formatted and has the same rules and styles before committing.
 
-![caption](src/assets/500.gif)
+### 1. Eslint and Prettier
 
-#### 404 Page
+- The reason why I have decided to use [Eslint](https://eslint.org/) and [Prettier](https://prettier.io/) to solve this problem and to work better as team and keep our code clean.
 
-![caption](src/assets/404.gif)
+### 2. Husky and commitlint
+
+- Additionally, I have also used [husky](https://github.com/typicode/husky) and [commitlint](https://commitlint.js.org/#/). Everytime we commit a change, husky runs eslint against files that have been stagged to detect errors and fix formatting changes. On top of that, commitlint comes along to lint our commit messages, and abort if they don't respect commit message rules and convention.
+
+# Technical Stack 📺
+
+- [Nextjs with Typescript](https://nextjs.org/docs) for frontend
+- [@emotion/react](https://emotion.sh/docs/@emotion/react) for styling
+- [Redux with Typescript](https://redux.js.org/usage/usage-with-typescript) for state management
+- [Cypress](https://docs.cypress.io/guides/overview/why-cypress) for End-to-End test
 
 # State Management 🕸
 
@@ -61,74 +77,14 @@ You probably wonder which test, unit or integration or End-to-End tests, for my 
 
 This test is quite challenging for me. I spent a fews days to learn [Nextjs](https://nextjs.org/docs), [Redux](https://redux.js.org/usage/usage-with-typescript) and [Cypress](https://docs.cypress.io/guides/overview/why-cypress) to be able to do this test. In total, I spent more than twenty hours for this test. As a result, I have made a lot of progress and I am ready 100% to join Leboncoin team.
 
-# Context :
+# Live App 📽
 
-At leboncoin, our users can share messages about a transaction, or ask for informations about any products.
+![caption](src/assets/Live-App.gif)
 
-Your job is to create the interface to consult those messages.
-The interface needs to work on both desktop & mobile devices.
+#### Server Error 500 page
 
-In addition to your code, a README explaining your thought process and your choices would be appreciated.
+![caption](src/assets/500.gif)
 
-# Exercice :
+#### 404 Page
 
-- Display a list of all the conversations
-- Allow the user to select a conversation
-  - Inside the conversation, there is a list of all the messages between these two users.
-  - As a user, you can type and send new messages in this conversation
-
-**As your application can be used by millions of users, make sure to provide some robust safety guards.**
-
-### Sketches :
-
-Obvisouly, it is up to you to make something nice and pretty, you are free to design it the way you like. The sketches are here to give you an idea on how it should look.
-
-<details>
-  <summary>Click to see the sketches</summary>
-  
-Mobile list :
-
-![](./sketches/list-mobile.jpg)
-
-Desktop list :
-
-![](./sketches/list-desktop.jpg)
-
-Mobile conversation :
-
-![](./sketches/conv-mobile.jpg)
-
-Desktop conversation :
-
-![](./sketches/conv-desktop.jpg)
-
-</details>
-
-### API :
-
-You can find the API swagger file in `docs/api-swagger.yaml`.
-
-For a better readibility, you can view it on [https://leboncoin.tech/frontend-technical-test/](https://leboncoin.tech/frontend-technical-test/).
-
----
-
-## Bonus 1 :
-
-We provide some conversation samples, but can you improve the app so the user can now create new conversations ?
-
-## Bonus 2 :
-
-Our infrastructure is a bit shaky.. Sometimes the servers are crashing. “It’s not you, it’s me”, but maybe you can display something nice to warn the user and handle it gracefully.
-
-## Do you want to make the app even better ?
-
-Feel free to make as many improvements as you like.
-We love creativity and technical challenges.
-
-If you are out of ideas, here are some thoughts :
-
-- As we want to reach our users anywhere, we need to make sure the app is performing well. What can you do to make it really fast ?
-
-- Our goal is to support everybody in the country, including people with disabilities. As a good citizen and a good developer, can you make sure the app is accessible for everyone ?
-
-- We all love to relax after a hard day’s work. It would be a shame if we didn’t feel confident enough about the upcoming automatic deployment. Are you sure everything has been tested thoroughly ?
+![caption](src/assets/404.gif)
